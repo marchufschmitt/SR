@@ -116,8 +116,8 @@ civ_circuit <- c("CBI",
 
 recompense <- c(20, 15, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0) #A modifier si changement des r�compenses (1ere valeur = 15C du premier, etc.)
 
-getwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') 
-setwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') #Modifier le chemin de sortie si besoin est (besoin de comprendre la logique)
+#getwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') 
+#setwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') #Modifier le chemin de sortie si besoin est (besoin de comprendre la logique)
 
 #A Partir d'ici, ne plus modifier, tout s�lectionner jusqu'� la fin et faire "run".
 library (readr)
