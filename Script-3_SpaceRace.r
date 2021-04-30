@@ -1,4 +1,4 @@
-install.packages("jsonlite", "rjson") #A NE FAIRE QU'UNE FOIS : Une fois t�l�charg�, supprimer cette ligne
+install.packages(c("jsonlite", "rjson")) #A NE FAIRE QU'UNE FOIS : Une fois t�l�charg�, supprimer cette ligne
 
 
 SAISON <- 11 #Num�ro de saison, � modifier
@@ -116,11 +116,11 @@ civ_circuit <- c("CBI",
 
 recompense <- c(20, 15, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0) #A modifier si changement des r�compenses (1ere valeur = 15C du premier, etc.)
 
-getwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') 
-setwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') #Modifier le chemin de sortie si besoin est (besoin de comprendre la logique)
+#getwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') 
+#setwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') #Modifier le chemin de sortie si besoin est (besoin de comprendre la logique)
 
 #A Partir d'ici, ne plus modifier, tout s�lectionner jusqu'� la fin et faire "run".
-library (readr)
+library(readr)
 library(jsonlite)
 civ = c('CHARLES', 'CHARLELIE', 'MEDERIC', 'GAEL', 'MARC', 'ARTHUR', 'QUENTIN', 'JAMEL', 'SIMON', 'SOHEIL', 'ALEXANDRE', 'SEB', 'DAVID')
 scorecourse = c(sample(1:circuit[1], size = 13, replace = F))
@@ -269,7 +269,7 @@ for (i in 1:length(circuit)) {
       write_csv(csv_export[order(- csv_export[,6], csv_export[,1]),], file = path)
       
       write(txt, file="export.json")
-      aws.s3::put_object(file, "marchufschmitt/SR/export.json", "marchufschmitt", region = "")
+      #aws.s3::put_object(file, "marchufschmitt/SR/export.json", "marchufschmitt", region = "")
    }
    
 }
