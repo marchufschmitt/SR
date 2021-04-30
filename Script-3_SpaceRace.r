@@ -120,7 +120,7 @@ recompense <- c(20, 15, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0) #A modifier si changem
 #setwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') #Modifier le chemin de sortie si besoin est (besoin de comprendre la logique)
 
 #A Partir d'ici, ne plus modifier, tout s�lectionner jusqu'� la fin et faire "run".
-library (readr)
+library(readr)
 library(jsonlite)
 civ = c('CHARLES', 'CHARLELIE', 'MEDERIC', 'GAEL', 'MARC', 'ARTHUR', 'QUENTIN', 'JAMEL', 'SIMON', 'SOHEIL', 'ALEXANDRE', 'SEB', 'DAVID')
 scorecourse = c(sample(1:circuit[1], size = 13, replace = F))
