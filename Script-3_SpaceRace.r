@@ -269,7 +269,7 @@ for (i in 1:length(circuit)) {
       write_csv(csv_export[order(- csv_export[,6], csv_export[,1]),], file = path)
       
       write(txt, file="export.json")
-      aws.s3::put_object(file, "marchufschmitt/SR/export.json", "marchufschmitt", region = "")
+      #aws.s3::put_object(file, "marchufschmitt/SR/export.json", "marchufschmitt", region = "")
    }
    
 }
