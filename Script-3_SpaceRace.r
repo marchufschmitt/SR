@@ -1,47 +1,44 @@
-install.packages("jsonlite", "rjson") #A NE FAIRE QU'UNE FOIS : Une fois t�l�charg�, supprimer cette ligne
-
-
 SAISON <- 11 #Num�ro de saison, � modifier
 
-charles <- c('Tech', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir( remplacer la totalit� des 'xxx' par un nombre, en conservant les virgules)
+charles <- c(30, 2, 3, 5) #A remplir( remplacer la totalit� des 'xxx' par un nombre, en conservant les virgules)
 #Pour STATIONS : indiquer le nombre brut de de stations (1, 2, 3... *5 ult�rieur)
 #BONUS = TECHNOLOGIE DE COMPETITION NATIONALE OU NON : SI tech : mettre 5 / Si pas tech mettre 0 !!!
 presence_char <- 0 #CHANGER SI PRESENCE EN 1
 
-charlelie <- c('TECH', 6, 6, 5) #A remplir 
+charlelie <- c(20, 6, 6, 5) #A remplir 
 presence_charlel <- 1 #PRESENCE = 1, ABSENCE = 0 ACTUELLEMENT : Par d�faut sur l'actuel.
 
-mederic <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 5) #A remplir
+mederic <- c(17, 1, 6, 5) #A remplir
 presence_mede <- 1 #PRESENCE
 
-gael <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+gael <- c(12, 2, 6, 7) #A remplir
 presence_gael <- 1 #PRESENCE
 
-marc <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+marc <- c(11, 3, 6, 6) #A remplir
 presence_marc <- 1 #PRESENCE
 
-arthur <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+arthur <- c(20, 2, 2, 5) #A remplir
 presence_arth <- 1 #PRESENCE
 
-quentin <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+quentin <- c(10, 1, 0, 4) #A remplir
 presence_quen <- 1 #PRESENCE
 
-jamel <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+jamel <- c(30, 3, 4, 1) #A remplir
 presence_jam <- 1 #PRESENCE
 
-simon <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+simon <- c(15, 4, 2, 0) #A remplir
 presence_simon <- 1 #PRESENCE
 
-soheil <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+soheil <- c(22, 2, 3, 2) #A remplir
 presence_sol <- 1 #PRESENCE
 
-alexandre <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+alexandre <- c(18, 3, 4, 1) #A remplir
 presence_alex <- 1 #PRESENCE
 
-seb <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+seb <- c(28, 1, 6, 3) #A remplir
 presence_seb <- 1 #PRESENCE
 
-david <- c('TECH', 'STATIONS', 'NBR CIRCUITS', 'BONUS') #A remplir
+david <- c(20, 2, 1, 0) #A remplir
 presence_davi<- 1 #CHANGER SI PRESENCE EN 1
 
 #NOMS : NOMS DES CIVILISATIONS, � modifier si changement
@@ -116,8 +113,8 @@ civ_circuit <- c("CBI",
 
 recompense <- c(20, 15, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0) #A modifier si changement des r�compenses (1ere valeur = 15C du premier, etc.)
 
-getwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') 
-setwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') #Modifier le chemin de sortie si besoin est (besoin de comprendre la logique)
+#getwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') 
+#setwd('C:\\Users\\lucca\\Desktop\\a travers les etoiles\\partie 1\\SR') #Modifier le chemin de sortie si besoin est (besoin de comprendre la logique)
 
 #A Partir d'ici, ne plus modifier, tout s�lectionner jusqu'� la fin et faire "run".
 library (readr)
@@ -251,9 +248,7 @@ for (i in 1:length(circuit)) {
    
    if (i == length(circuit)) {txt <- paste(txt, '
 
- ] }')} else {txt <- paste(txt, ',
-
-')}
+ ] }')} else {txt <- paste(txt, ',')}
    
    if (i == length(circuit)) {
       gains <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -269,10 +264,13 @@ for (i in 1:length(circuit)) {
       write_csv(csv_export[order(- csv_export[,6], csv_export[,1]),], file = path)
       
       write(txt, file="export.json")
-      aws.s3::put_object(file, "marchufschmitt/SR/export.json", "marchufschmitt", region = "")
+      #aws.s3::put_object(file, "marchufschmitt/SR/export.json", "marchufschmitt", region = "")
    }
    
+   
 }
+
+
 
 
 
