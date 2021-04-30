@@ -1,4 +1,4 @@
-install.packages("jsonlite", "rjson") #A NE FAIRE QU'UNE FOIS : Une fois t�l�charg�, supprimer cette ligne
+install.packages(c("jsonlite", "rjson")) #A NE FAIRE QU'UNE FOIS : Une fois t�l�charg�, supprimer cette ligne
 
 
 SAISON <- 11 #Num�ro de saison, � modifier
